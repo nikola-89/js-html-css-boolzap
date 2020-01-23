@@ -1,0 +1,34 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.main-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: #D8DBD5;
+    position: relative;
+}
+
+.main-wrapper::after {
+    content: "";
+    height: 127px;
+    width: 100%;
+    background-color: #009688;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.app-wrapper {
+    display: flex;
+    height: 95vh;
+    width: 75vw;
+    min-width: 500px;
+    box-shadow: 0 1px 1px 0 rgba(0 ,0 ,0 , .06), 0 2px 5px 0 rgba(0 ,0 ,0, .2);
+    z-index: 1;
+}
