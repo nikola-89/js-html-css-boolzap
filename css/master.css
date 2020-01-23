@@ -39,13 +39,12 @@
     flex: 40%;
 }
 
-.profile,
-.finder {
+.profile {
     height: 52px;
 }
 
 .profile {
-    background-color: #ededed;
+    background-color: #EDEDED;
     padding: 6px 16px;
 }
 
@@ -55,4 +54,44 @@
     border-radius: 50%;
     cursor: pointer;
     object-fit: cover;
+}
+
+.profile .user-extra img,
+.contacts-box .finder-box .finder img {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.profile .user-extra img:not(:first-child) {
+    margin-left: 25px;
+}
+
+.contacts-box .finder-box {
+    height: 52px;
+    background-color: #f1f1f1;
+}
+
+.contacts-box .finder-box .finder {
+    width: 95%;
+    height: 80%;
+    border-radius: 2rem;
+    background-color: #FFF;
+}
+
+.contacts-box .finder-box .finder img {
+    margin-left: 20px;
+}
+
+.contacts-box .finder-box .finder input {
+    width: 220px;
+    height: 20px;
+    background-color: #FFF;
+    border: none;
+    outline-style: none;
+    margin-left: 20px;
+}
+
+.contacts-box .finder-box .finder input::placeholder {
+    color: #bfbfbf;
 }
