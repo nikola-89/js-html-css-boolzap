@@ -23,7 +23,7 @@
 
 .app-wrapper {
     height: 95vh;
-    width: 75vw;
+    width: 65vw;
     min-width: 500px;
     box-shadow: 0 1px 1px 0 rgba(0 ,0 ,0 , .06), 0 2px 5px 0 rgba(0 ,0 ,0, .2);
     z-index: 1;
@@ -39,8 +39,11 @@
     flex: 40%;
 }
 
-.profile {
-    height: 52px;
+.profile,
+.finder-box,
+.msg-info-contact,
+.message-box .msg-input {
+    height: 55px;
 }
 
 .profile {
@@ -68,7 +71,6 @@
 }
 
 .contacts-box .finder-box {
-    height: 52px;
     background-color: #f1f1f1;
 }
 
@@ -94,4 +96,29 @@
 
 .contacts-box .finder-box .finder input::placeholder {
     color: #bfbfbf;
+}
+
+/* temporaneo */
+.contacts-box .contacts {
+    width: 100%;
+    height: 100%;
+    background-color: #FFF;
+}
+/* ********** */
+
+.message-box .msg-info-contact {
+    background-color: #EDEDED;
+    border: 1px solid lightgrey;
+}
+
+.message-box .msg-conversation {
+    background-image: url("../img/background_conversation.png");
+    background-repeat: repeat;
+    background-position: center;
+    background-size: contain;
+    border-left: 1px solid lightgrey;
+}
+
+.message-box .msg-input {
+    background-color: #EDEDED;
 }
