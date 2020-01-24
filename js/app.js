@@ -1,10 +1,14 @@
 $(document).ready(function() {
 // ***************************
-$('.msg-input input').click(
+$('.msg-input input').keyup(
     function() {
-        if ($('.msg-input input').val() != '') {
-            
+        if ($(this).val().length === 0) {
+            $(this).siblings('.microphone-ico').removeClass('hidden');
+            $(this).siblings('.msgsend-ico').addClass('hidden');
+        } else {
+            $(this).siblings('.microphone-ico').addClass('hidden');
+            $(this).siblings('.msgsend-ico').removeClass('hidden');
         }
-});
+    });
 // ***************************
 });

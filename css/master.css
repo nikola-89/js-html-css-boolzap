@@ -2,6 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Lato', sans-serif;
 }
 
 .main-wrapper {
@@ -46,12 +47,14 @@
     height: 55px;
 }
 
-.profile {
+.profile,
+.message-box .msg-info-contact {
     background-color: #EDEDED;
     padding: 6px 16px;
 }
 
-.profile .user-avatar img {
+.profile .user-avatar img,
+.msg-info-contact .msg-info-contact-avatar img {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -61,13 +64,15 @@
 
 .profile .user-extra img,
 .contacts-box .finder-box .finder img,
+.message-box .msg-info-contact-extra img,
 .message-box .msg-input-box .msg-input img {
     width: 24px;
     height: 24px;
     cursor: pointer;
 }
 
-.profile .user-extra img:not(:first-child) {
+.profile .user-extra img:not(:first-child),
+.message-box .msg-info-contact-extra img:not(:first-child) {
     margin-left: 25px;
 }
 
@@ -113,6 +118,13 @@
     border: 1px solid lightgrey;
 }
 
+.message-box .msg-info-contact .msg-info-contact-name h4 {
+    font-weight: normal;
+    padding-left: 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
 .message-box .msg-conversation {
     background-image: url("../img/background_conversation.png");
     background-repeat: repeat;
@@ -126,12 +138,7 @@
 }
 
 .message-box .msg-input-box .msg-input img {
-    margin-left: 20px;
-}
-
-.message-box .msg-input-box .msg-input img:last-child {
-    margin-right: 20px;
-    display: none;
+    margin: 20px;
 }
 
 .message-box .msg-input-box .msg-input input {
@@ -143,4 +150,9 @@
     border-radius: 2rem;
     margin-left: 20px;
     padding-left: 10px;
+}
+
+/* *************************************************** */
+.hidden {
+    display: none;
 }
