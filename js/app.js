@@ -1,6 +1,5 @@
 $(document).ready(function() {
 // ***************************
-<<<<<<< HEAD
 $('.msg-input input').keyup(
     function() {
         if ($(this).val().length === 0) {
@@ -11,13 +10,5 @@ $('.msg-input input').keyup(
             $(this).siblings('.msgsend-ico').removeClass('hidden');
         }
     });
-=======
-$('.msg-input input').click(
-    function() {
-        if ($('.msg-input input').val() != '') {
-            
-        }
-});
->>>>>>> master
 // ***************************
 });
