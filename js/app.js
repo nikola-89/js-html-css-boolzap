@@ -2,13 +2,67 @@ $(document).ready(function() {
 // ***************************
 $('.msg-input input').keyup(
     function() {
-        if ($(this).val().length === 0) {
-            $(this).siblings('.microphone-ico').removeClass('hidden');
-            $(this).siblings('.msgsend-ico').addClass('hidden');
-        } else {
-            $(this).siblings('.microphone-ico').addClass('hidden');
-            $(this).siblings('.msgsend-ico').removeClass('hidden');
+        resetIconSend();
+    }
+);
+
+$('.msg-input input').keydown(
+    function() {
+        if (event.which == 13) {
+            sendMessage();
+            resetIconSend();
+            OkMessageReceived()
         }
-    });
+    }
+);
+
+$('.msgsend-ico').click(
+    function() {
+        sendMessage();
+        resetIconSend();
+        OkMessageReceived()
+    }
+);
+
 // ***************************
 });
+
+
+// ***************************
+function sendMessage() {
+    if($('.msg-input input').val().length !== 0) {
+        var newMessage = $('.template .message').clone();
+        newMessage.find('.message-text').text($('.msg-input input').val());
+        var data = new Date();
+        newMessage.find('.message-time').text(addZero(data.getHours()) +':'+ addZero(data.getMinutes()));
+        newMessage.addClass('msg-sent');
+        $('.msg-conversation').append(newMessage);
+        $('.msg-input input').val('');
+    }
+}
+
+function OkMessageReceived() {
+    var newMessage = $('.template .message').clone();
+    newMessage.find('.message-text').text('Ok');
+    var data = new Date();
+    newMessage.find('.message-time').text(addZero(data.getHours()) +':'+ addZero(data.getMinutes()));
+    newMessage.addClass('msg-received');
+    $('.msg-conversation').append(newMessage);
+}
+
+function resetIconSend() {
+    if ($('.msg-input input').val().length === 0) {
+        $('.msg-input input').siblings('.microphone-ico').removeClass('hidden');
+        $('.msg-input input').siblings('.msgsend-ico').addClass('hidden');
+    } else {
+        $('.msg-input input').siblings('.microphone-ico').addClass('hidden');
+        $('.msg-input input').siblings('.msgsend-ico').removeClass('hidden');
+    }
+}
+
+function addZero(number) {
+    if(number < 10) {
+        number = '0' + number;
+    }
+    return number;
+}

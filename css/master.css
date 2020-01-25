@@ -2,7 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Segoe UI', Fallback, sans-serif;
 }
 
 .main-wrapper {
@@ -129,7 +129,7 @@
     background-image: url("../img/background_conversation.png");
     background-repeat: repeat;
     background-position: center;
-    background-size: contain;
+    background-size: auto;
     border-left: 1px solid lightgrey;
 }
 
@@ -163,12 +163,16 @@
 }
 
 .message {
-    min-width: 10%;
-    max-width: 40%;
+    min-width: 100px;
     padding: 5px;
     margin: 10px;
     border-radius: 5px;
     border-bottom: 1px solid rgb(200, 200, 200);
+}
+
+.message .message-top p {
+    padding: 0 10px;
+    font-size: 14.2px;
 }
 
 .message .message-top img {
@@ -179,7 +183,10 @@
 
 .message-bottom {
     text-align: right;
-    font-size: 12px;
+    font-size: 11px;
+    font-weight: lighter;
+    color: rgb(173, 173, 173);
+    margin: -10px 0 -5px 4px;
 }
 
 .msg-sent {
@@ -192,4 +199,12 @@
     float: left;
     clear: both;
     background: white;
+}
+
+
+@font-face {
+    font-family: SegoeUI;
+    src:
+        local("Segoe UI"),
+        url('http://c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.woff2') format("woff2");
 }
