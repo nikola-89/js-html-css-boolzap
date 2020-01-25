@@ -8,16 +8,16 @@
 .main-wrapper {
     height: 100vh;
     width: 100vw;
-    background-color: #D8DBD5;
+    background-image: linear-gradient(180deg ,#dddbd1 ,#d2dbdc);
     position: relative;
 }
 
-.main-wrapper::after {
+.main-wrapper::before {
     content: "";
     height: 127px;
     width: 100%;
     background-color: #009688;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
 }
@@ -112,7 +112,6 @@
     background-color: #FFF;
 }
 /* ********** */
-
 .message-box .msg-info-contact {
     background-color: #EDEDED;
     border: 1px solid lightgrey;
@@ -131,6 +130,16 @@
     background-position: center;
     background-size: auto;
     border-left: 1px solid lightgrey;
+    overflow-y: scroll;
+}
+
+.message-box .msg-conversation::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.message-box .msg-conversation::-webkit-scrollbar-thumb {
+    background-color: rgba(0 ,0 ,0 , .2);
 }
 
 .message-box .msg-input-box {
@@ -138,7 +147,11 @@
 }
 
 .message-box .msg-input-box .msg-input img {
-    margin: 20px;
+    margin: 0 20px;
+}
+
+.message-box .msg-input-box .msg-input img:first-of-type {
+    margin-right: 0;
 }
 
 .message-box .msg-input-box .msg-input input {
@@ -163,30 +176,36 @@
 }
 
 .message {
-    min-width: 100px;
-    padding: 5px;
+    min-width: 80px;
+    padding: 5px 5px;
     margin: 10px;
     border-radius: 5px;
     border-bottom: 1px solid rgb(200, 200, 200);
 }
 
+.message .message-top {
+    position: relative;
+}
+
 .message .message-top p {
-    padding: 0 10px;
+    padding: 0 30px 0 10px;
     font-size: 14.2px;
 }
 
-.message .message-top img {
+.message .message-top .chevron {
     width: 18px;
     height: 18px;
     cursor: pointer;
+    position: absolute;
+    top: -3px;
+    right: 0;
 }
 
 .message-bottom {
     text-align: right;
     font-size: 11px;
-    font-weight: lighter;
     color: rgb(173, 173, 173);
-    margin: -10px 0 -5px 4px;
+    margin: -10px 0 -5px 5px;
 }
 
 .msg-sent {
@@ -198,7 +217,7 @@
 .msg-received {
     float: left;
     clear: both;
-    background: white;
+    background: #FFF;
 }
 
 

@@ -9,20 +9,36 @@ $('.msg-input input').keyup(
 $('.msg-input input').keydown(
     function() {
         if (event.which == 13) {
-            sendMessage();
             resetIconSend();
-            OkMessageReceived()
+            if (sendMessage()) {
+                setTimeout(
+                    function() {
+                        MessageReceived();
+                    }, 1000);
+            }
         }
     }
 );
 
 $('.msgsend-ico').click(
     function() {
-        sendMessage();
         resetIconSend();
-        OkMessageReceived()
+        if (sendMessage()) {
+            setTimeout(
+                function() {
+                    MessageReceived();
+                }, 1000);
+        }
     }
 );
+
+$(document).on("mouseenter mouseleave", ".message", function (e) {
+    if (e.type == "mouseenter") {
+        $(this).find('.chevron').removeClass('hidden');
+    } else {
+        $(this).find('.chevron').addClass('hidden');
+    }
+});
 
 // ***************************
 });
@@ -38,10 +54,12 @@ function sendMessage() {
         newMessage.addClass('msg-sent');
         $('.msg-conversation').append(newMessage);
         $('.msg-input input').val('');
+        return true
     }
+    return false
 }
 
-function OkMessageReceived() {
+function MessageReceived() {
     var newMessage = $('.template .message').clone();
     newMessage.find('.message-text').text('Ok');
     var data = new Date();
