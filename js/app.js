@@ -44,10 +44,16 @@ $(document).on("mouseenter mouseleave", ".message", function (e) {
 });
 // CHEVRON SHOW/HIDDEN IN BOX MESSAGGIO **** END
 
+// NASCONDI NOTIFICA **** START
+$('.enable-notify-box').click(
+    function() {
+        $(this).slideUp();
+    }
+);
+// NASCONDI NOTIFICA **** END
 
 // ***************************
 });
-
 
 // ***************************
 function sendMessage() {

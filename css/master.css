@@ -143,13 +143,12 @@ span {
     color: #bfbfbf;
 }
 
-/* temporaneo */
 .contacts-box .contacts {
     background-color: #FFF;
     border-top: 1px solid lightgrey;
     overflow-y: auto;
 }
-/* ********** */
+
 .message-box .msg-info-contact {
     background-color: #EDEDED;
     border-bottom: 1px solid lightgrey;
