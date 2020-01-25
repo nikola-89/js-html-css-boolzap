@@ -1,5 +1,6 @@
 $(document).ready(function() {
 // ***************************
+// INVIO MESSAGGIO = CLICK - TASTO ENTER | ICON INPUT SWAP **** START
 $('.msg-input input').keyup(
     function() {
         resetIconSend();
@@ -31,7 +32,9 @@ $('.msgsend-ico').click(
         }
     }
 );
+// INVIO MESSAGGIO = CLICK - TASTO ENTER | ICON INPUT SWAP **** END
 
+// CHEVRON SHOW/HIDDEN IN BOX MESSAGGIO **** START
 $(document).on("mouseenter mouseleave", ".message", function (e) {
     if (e.type == "mouseenter") {
         $(this).find('.chevron').removeClass('hidden');
@@ -39,6 +42,8 @@ $(document).on("mouseenter mouseleave", ".message", function (e) {
         $(this).find('.chevron').addClass('hidden');
     }
 });
+// CHEVRON SHOW/HIDDEN IN BOX MESSAGGIO **** END
+
 
 // ***************************
 });
