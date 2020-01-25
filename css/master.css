@@ -130,7 +130,7 @@
     background-position: center;
     background-size: auto;
     border-left: 1px solid lightgrey;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .message-box .msg-conversation::-webkit-scrollbar {
@@ -178,7 +178,7 @@
 .message {
     min-width: 80px;
     padding: 5px 5px;
-    margin: 10px;
+    margin: 1px;
     border-radius: 5px;
     border-bottom: 1px solid rgb(200, 200, 200);
 }

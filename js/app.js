@@ -52,7 +52,7 @@ function sendMessage() {
         var data = new Date();
         newMessage.find('.message-time').text(addZero(data.getHours()) +':'+ addZero(data.getMinutes()));
         newMessage.addClass('msg-sent');
-        $('.msg-conversation').append(newMessage);
+        $('.msg-conversation').append(newMessage).scrollTop($('.msg-conversation').height());
         $('.msg-input input').val('');
         return true
     }
@@ -65,7 +65,7 @@ function MessageReceived() {
     var data = new Date();
     newMessage.find('.message-time').text(addZero(data.getHours()) +':'+ addZero(data.getMinutes()));
     newMessage.addClass('msg-received');
-    $('.msg-conversation').append(newMessage);
+    $('.msg-conversation').append(newMessage).scrollTop($('.msg-conversation').height());
 }
 
 function resetIconSend() {
