@@ -5,6 +5,11 @@
     font-family: 'Segoe UI', Fallback, sans-serif;
 }
 
+span {
+    width: 24px;
+    height: 24px;
+}
+
 .main-wrapper {
     height: 100vh;
     width: 100vw;
@@ -62,18 +67,51 @@
     object-fit: cover;
 }
 
-.profile .user-extra img,
-.contacts-box .finder-box .finder img,
-.message-box .msg-info-contact-extra img,
-.message-box .msg-input-box .msg-input img {
+.profile .user-extra span svg,
+.contacts-box .finder-box .finder span svg,
+.message-box .msg-info-contact-extra span svg
+.message-box .msg-input-box .msg-input span svg {
     width: 24px;
     height: 24px;
     cursor: pointer;
 }
 
-.profile .user-extra img:not(:first-child),
-.message-box .msg-info-contact-extra img:not(:first-child) {
+.profile .user-extra span:not(:first-child),
+.message-box .msg-info-contact-extra span:not(:first-child) {
     margin-left: 25px;
+}
+
+.contacts-box .enable-notify-box {
+    height: 89px;
+    background-color: #9de1fe;
+    padding: 13px 12px 14px 13px;
+    cursor: pointer;
+}
+
+.contacts-box .enable-notify-box:hover p:last-child {
+    text-decoration: underline;
+}
+
+.contacts-box .enable-notify-box span {
+    width: 48px;
+    height: 48px;
+}
+
+.contacts-box .enable-notify-box .notify-right p {
+    padding-left: 10px;
+    font-size: 16px;
+    color: rgba(0, 0, 0, .5);
+}
+
+.contacts-box .enable-notify-box .notify-right p:last-child {
+    font-size: 14px;
+}
+
+.contacts-box .enable-notify-box .notify-right p span {
+    padding-left: 3px;
+    width: 8px;
+    height: 12px;
+    vertical-align: middle;
 }
 
 .contacts-box .finder-box {
@@ -87,7 +125,7 @@
     background-color: #FFF;
 }
 
-.contacts-box .finder-box .finder img {
+.contacts-box .finder-box .finder span {
     margin-left: 20px;
 }
 
@@ -146,11 +184,11 @@
     background-color: #EDEDED;
 }
 
-.message-box .msg-input-box .msg-input img {
+.message-box .msg-input-box .msg-input span {
     margin: 0 20px;
 }
 
-.message-box .msg-input-box .msg-input img:first-of-type {
+.message-box .msg-input-box .msg-input span:first-of-type {
     margin-right: 0;
 }
 
@@ -181,6 +219,14 @@
     margin: 1px;
     border-radius: 5px;
     border-bottom: 1px solid rgb(200, 200, 200);
+}
+
+.message:first-child {
+    margin-top: 20px;
+}
+
+.message:last-child {
+    margin-bottom: 20px;
 }
 
 .message .message-top {
