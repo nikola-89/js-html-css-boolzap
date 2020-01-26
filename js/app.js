@@ -47,7 +47,7 @@ $(document).on("mouseenter mouseleave click", ".contact", function (e) {
     if (e.type == "mouseenter") {
         $(this).find('.chevron').removeClass('hidden');
         if (contactIsSelected(this) == false) {
-            $(this).css("background-color", "rgb(241, 241, 241)");
+            $(this).css("background-color", "rgb(245, 245, 245)");
         }
     } else if (e.type == "mouseleave") {
         $(this).find('.chevron').addClass('hidden');
@@ -57,6 +57,7 @@ $(document).on("mouseenter mouseleave click", ".contact", function (e) {
     } else {
         $(".contact").css("background-color", "rgba(0, 0, 0, 0)");
         $(this).css("background-color", "rgb(235, 235, 235)");
+        contactFocus(this);
     }
 });
 // CHEVRON SHOW/HIDDEN IN BOX MESSAGGIO **** END
@@ -108,10 +109,15 @@ function resetIconSend() {
 
 function contactIsSelected(thisContact) {
     if($(thisContact).css("background-color") == "rgb(235, 235, 235)") {
-        console.log('TRUE');
         return true;
     }
     return false;
+}
+
+function contactFocus(thisContact) {
+    $('.message-box .msg-info-contact .msg-info-contact-name h4').text($(thisContact).find('.contact-name h4').text());
+    // **********************************************************
+    $('.message-box .msg-info-contact .msg-info-contact-avatar img').attr( 'src', $(thisContact).find('.contact-avatar img').attr('src') );
 }
 
 function addZero(number) {
