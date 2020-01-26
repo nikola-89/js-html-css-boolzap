@@ -75,7 +75,7 @@ $('.enable-notify-box').click(
 
 // ***************************
 function sendMessage() {
-    if($('.msg-input input').val().length !== 0) {
+    if($('.msg-input input').val().trim().length !== 0) {
         var newMessage = $('.template .message').clone();
         newMessage.find('.message-text').text($('.msg-input input').val());
         var data = new Date();
@@ -85,6 +85,7 @@ function sendMessage() {
         $('.msg-input input').val('');
         return true;
     }
+    $('.msg-input input').val('');
     return false;
 }
 
@@ -115,9 +116,11 @@ function contactIsSelected(thisContact) {
 }
 
 function contactFocus(thisContact) {
+    // **********************************************************
     $('.message-box .msg-info-contact .msg-info-contact-name h4').text($(thisContact).find('.contact-name h4').text());
     // **********************************************************
     $('.message-box .msg-info-contact .msg-info-contact-avatar img').attr( 'src', $(thisContact).find('.contact-avatar img').attr('src') );
+    // **********************************************************
 }
 
 function addZero(number) {
@@ -125,4 +128,10 @@ function addZero(number) {
         number = '0' + number;
     }
     return number;
+}
+
+function getRandomIntInclusive(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
