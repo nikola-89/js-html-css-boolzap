@@ -47,7 +47,7 @@ $(document).on("mouseenter mouseleave", ".message", function (e) {
 // NASCONDI NOTIFICA **** START
 $('.enable-notify-box').click(
     function() {
-        $(this).slideUp();
+        $(this).slideUp(200);
     }
 );
 // NASCONDI NOTIFICA **** END

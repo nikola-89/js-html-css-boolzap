@@ -61,7 +61,8 @@ span {
 }
 
 .profile .user-avatar img,
-.msg-info-contact .msg-info-contact-avatar img {
+.msg-info-contact .msg-info-contact-avatar img,
+.contacts-box .contacts-list .contact .contact-avatar img {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -143,22 +144,44 @@ span {
     color: #bfbfbf;
 }
 
-.contacts-box .contacts {
+.contacts-box .contacts-list {
+    height: 100%;
     background-color: #FFF;
     border-top: 1px solid lightgrey;
     overflow-y: auto;
 }
 
+.contacts-box .contacts-list .contact {
+    height: 72px;
+    background-color: #EBEBEB;
+    padding-right: 15px;
+    border-bottom: 1px solid lightgrey;
+    cursor: pointer;
+}
+
+.contacts-box .contacts-list .contact .contact-avatar {
+    padding: 0 15px;
+}
+
+.contacts-box .contacts-list .contact .contact-avatar img {
+    width: 50px;
+    height: 50px;
+}
+
+.contacts-box .contacts-list .contact .contact-info {
+    width: 100%;
+}
+
+/* --- */
+
 .message-box .msg-info-contact {
     background-color: #EDEDED;
-    border-bottom: 1px solid lightgrey;
 }
 
 .message-box .msg-info-contact .msg-info-contact-name h4 {
     font-weight: normal;
     padding-left: 10px;
     font-size: 14px;
-    cursor: pointer;
 }
 
 .message-box {
@@ -268,12 +291,14 @@ span {
     background: #FFF;
 }
 
+/* *************************************************************** */
 @font-face {
     font-family: Segoe UI;
     src:
         local("Segoe UI"),
         url('http://c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.woff2') format("woff2");
 }
+
 @media only screen and (max-width: 900px) {
     .main-wrapper .app-wrapper{
         width: 100vh;
