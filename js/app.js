@@ -88,6 +88,8 @@ $(document).ready(function() {
             $(".contact").css("background-color", "rgba(0, 0, 0, 0)");
             $(this).css("background-color", "rgb(235, 235, 235)");
             contactFocus(this);
+            $('.stay-connected-phone').addClass('hidden');
+            $('.message-box').removeClass('hidden');
         }
     });
     // CHEVRON SHOW/HIDDEN IN BOX MESSAGGIO **** END

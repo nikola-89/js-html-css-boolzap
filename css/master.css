@@ -34,7 +34,7 @@ span {
 
 .app-wrapper {
     height: 95vh;
-    width: 72.5vw;
+    width: 75vw;
     box-shadow: 0 1px 1px 0 rgba(0 ,0 ,0 , .06), 0 2px 5px 0 rgba(0 ,0 ,0, .2);
     z-index: 1;
 }
@@ -194,9 +194,47 @@ span {
 
 /* --- */
 .stay-connected-phone {
-    background-color: #FFF;
+    background-color: #f8f9fa;
+    border-bottom: 6px solid #4adf83;
+    cursor: default;
 }
 
+.stay-connected-phone .connected-phone-content {
+    max-width: 460px;
+    width: 80%;
+    text-align: center;
+}
+
+.stay-connected-phone .connected-phone-content h2 {
+    margin-top: 38px;
+    font-size: 32px;
+    font-weight: 300;
+    color: rgba(82 ,82 ,82 , .45);
+}
+
+.stay-connected-phone .connected-phone-content p {
+    font-size: 14px;
+    color: rgba(0 ,0 ,0 , .45);
+    margin-top: 34px;
+}
+
+.stay-connected-phone .connected-phone-content p:first-of-type {
+    margin-top: 24px;
+    padding-bottom: 34px;
+    border-bottom: 1px solid rgba(0 ,0 ,0 , .08);
+}
+
+.stay-connected-phone .connected-phone-content p a {
+    color: #07bc4c;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.stay-connected-phone .connected-phone-content span {
+    width: 21px;
+    height: 18px;
+    margin-right: 5px;
+}
 
 .message-box .msg-info-contact {
     background-color: #EDEDED;
@@ -210,7 +248,7 @@ span {
 
 .message-box,
 .stay-connected-phone {
-    border-left: 1px solid rgb(235, 235, 235);
+    border-left: 1px solid lightgray;
 }
 
 .message-box .msg-conversation {
