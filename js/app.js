@@ -34,12 +34,29 @@ $('.msgsend-ico').click(
 );
 // INVIO MESSAGGIO = CLICK - TASTO ENTER | ICON INPUT SWAP **** END
 
-// CHEVRON SHOW/HIDDEN IN BOX MESSAGGIO **** START
+// CHEVRON SHOW/HIDDEN IN BOX MESSAGGIO || BOX CONTATTO**** START
 $(document).on("mouseenter mouseleave", ".message", function (e) {
     if (e.type == "mouseenter") {
         $(this).find('.chevron').removeClass('hidden');
     } else {
         $(this).find('.chevron').addClass('hidden');
+    }
+});
+
+$(document).on("mouseenter mouseleave click", ".contact", function (e) {
+    if (e.type == "mouseenter") {
+        $(this).find('.chevron').removeClass('hidden');
+        if (contactIsSelected(this) == false) {
+            $(this).css("background-color", "rgb(241, 241, 241)");
+        }
+    } else if (e.type == "mouseleave") {
+        $(this).find('.chevron').addClass('hidden');
+        if (contactIsSelected(this) == false) {
+            $(this).css("background-color", "rgba(0, 0, 0, 0)");
+        }
+    } else {
+        $(".contact").css("background-color", "rgba(0, 0, 0, 0)");
+        $(this).css("background-color", "rgb(235, 235, 235)");
     }
 });
 // CHEVRON SHOW/HIDDEN IN BOX MESSAGGIO **** END
@@ -65,9 +82,9 @@ function sendMessage() {
         newMessage.addClass('msg-sent');
         $('.msg-conversation').append(newMessage).scrollTop($('.msg-conversation').height());
         $('.msg-input input').val('');
-        return true
+        return true;
     }
-    return false
+    return false;
 }
 
 function MessageReceived() {
@@ -87,6 +104,14 @@ function resetIconSend() {
         $('.msg-input input').siblings('.microphone-ico').addClass('hidden');
         $('.msg-input input').siblings('.msgsend-ico').removeClass('hidden');
     }
+}
+
+function contactIsSelected(thisContact) {
+    if($(thisContact).css("background-color") == "rgb(235, 235, 235)") {
+        console.log('TRUE');
+        return true;
+    }
+    return false;
 }
 
 function addZero(number) {
