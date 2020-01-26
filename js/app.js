@@ -1,18 +1,19 @@
 $(document).ready(function() {
     // ***************************
     // ARRAY CONTATTI **** START
-    // var contactsIdArray = [];
-    // $('.contact').each(
-    //     function(index) {
-    //     contactsIdArray.push({
-    //         'id': index + '-' + getRandomIntInclusive(1000, 9999) + '-' + getRandomIntInclusive(10000, 99999),
-    //         'name': $(this).find('.contact-name h4').text(),
-    //         'contact': $(this).clone(),
-    //         'msg': $('.msg-conversation .message').clone(),
-    //     });
-    //     console.log(contactsIdArray);
-    //     };
-    // );
+    var contactsIdArray = [];
+    $('.contact').each(
+        function(index) {
+        contactsIdArray.push({
+            'id': index + '-' + getRandomIntInclusive(1000, 9999) + '-' + getRandomIntInclusive(10000, 99999),
+            'name': $(this).find('.contact-name h4').text(),
+            'contact': $(this).clone(),
+            'msg': $('.msg-conversation .message').clone(),
+        }
+    );
+        console.log(contactsIdArray);
+        }
+    );
     // ARRAY CONTATTI **** END
 
     // INPUT CERCA CONTATTI **** START
