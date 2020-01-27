@@ -173,7 +173,7 @@ span {
 
 .contacts-box .contacts-list .contact .contact-info .contact-name small {
     font-size: 12px;
-    color: rgba(0, 0, 0, 0.45);
+    color: rgba(0, 0, 0, .45);
 }
 
 .contacts-box .contacts-list .contact .contact-info .contact-name h4 {
@@ -183,12 +183,17 @@ span {
 
 .contacts-box .contacts-list .contact .contact-info .contact-last-message p {
     font-size: 14px;
+    max-width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     color: rgba(0, 0, 0, .6);
 }
 
 .contacts-box .contacts-list .contact .contact-info .contact-last-message .chevron {
     width: 18px;
     height: 18px;
+    overflow: hidden;
 }
 
 /* --- */

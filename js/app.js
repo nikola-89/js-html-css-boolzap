@@ -23,7 +23,7 @@ $(document).ready(function() {
     ];
     // ***************************
     // CREAZIONE BOX CONTATTI da Array |||
-    for (var i = 0; i < contactsIdArray.length; i++) {
+    for (let i = 0; i < contactsIdArray.length; i++) {
         // *************************
         var templateContact = $('.template .contact').clone();
         // | img contatto
@@ -99,7 +99,7 @@ $(document).ready(function() {
     $(document).on("mouseenter mouseleave click", ".contact", function(e) {
         if (e.type == "mouseenter") {
             $(this).find('.chevron').removeClass('hidden');
-            for (var i = 0; i < contactsIdArray.length; i++) {
+            for (let i = 0; i < contactsIdArray.length; i++) {
                 if (!contactsIdArray[i].isSelected) {
                     // | rimuove colore sfondo box tutti i contatti
                     $('.contact').removeClass('contact-mouseenter');
@@ -110,7 +110,7 @@ $(document).ready(function() {
             }
         } else if (e.type == "mouseleave") {
             $(this).find('.chevron').addClass('hidden');
-            for (var i = 0; i < contactsIdArray.length; i++) {
+            for (let i = 0; i < contactsIdArray.length; i++) {
                 if (!contactsIdArray[i].isSelected) {
                     // | rimuove colore sfondo box tutti i contatti
                     $('.contact').removeClass('contact-mouseenter');
@@ -120,7 +120,7 @@ $(document).ready(function() {
                 }
             }
         } else {
-            for (var i = 0; i < contactsIdArray.length; i++) {
+            for (let i = 0; i < contactsIdArray.length; i++) {
                 // | reset isSelected to false in array
                 $(contactsIdArray[i].isSelected = false);
                 // | rimuove colore sfondo box tutti i contatti
@@ -161,6 +161,8 @@ $(document).ready(function() {
 });
 
 // ***************************
+// **********function*********
+// ***************************
 function sendMessage(arrayContact) {
     if ($('.msg-input input').val().trim().length !== 0) {
         // | creazione data corrente
@@ -173,10 +175,11 @@ function sendMessage(arrayContact) {
         templateMessage.find('.message-time').text(addZero(data.getHours()) + ':' + addZero(data.getMinutes()));
         // | aggiunta classe
         templateMessage.addClass('msg-sent');
-        // | push del messaggio nell'array del contatto selezionato
+        // | push del messaggio nell'array del contatto selezionato + pairingMessageContactBox
         for (let i = 0; i < arrayContact.length; i++) {
             if (arrayContact[i].isSelected) {
                 arrayContact[i].msg.push(templateMessage);
+                pairingMessageContactBox(arrayContact[i].id, templateMessage);
             }
         }
         // | push del messaggio nella schermata conversazione | scrollbar ultimo messaggio
@@ -195,21 +198,35 @@ function incomingMessage(arrayContact) {
     var data = new Date();
     // *************************
     var templateMessage = $('.template .message').clone();
-    // | assegnazione testo input al messaggio
+    // | assegnazione testo input al messaggio [preimpostato]
     templateMessage.find('.message-text').text('ok');
     // | assegnazione data corrente
     templateMessage.find('.message-time').text(addZero(data.getHours()) + ':' + addZero(data.getMinutes()));
     // | aggiunta classe
     templateMessage.addClass('msg-received');
-    // | push del messaggio nell'array del contatto selezionato
+    // | push del messaggio nell'array del contatto selezionato + pairingMessageContactBox
     for (let i = 0; i < arrayContact.length; i++) {
         if (arrayContact[i].isSelected) {
             arrayContact[i].msg.push(templateMessage);
+            pairingMessageContactBox(arrayContact[i].id, templateMessage);
         }
     }
     // | push del messaggio nella schermata conversazione | scrollbar ultimo messaggio
     $('.msg-conversation').append(templateMessage).scrollTop($('.msg-conversation').height());
 };
+
+function pairingMessageContactBox(idFromArray, tmplMessage) {
+    $('.contacts-list .contact').each(
+        function() {
+            if (contactIdFinder(this) == idFromArray) {
+                // | orario ultimo messaggio contatto
+                $(this).find('.contact-name small').text(tmplMessage.find('.message-time').text());
+                // | ultimo messaggio contatto
+                $(this).find('.contact-last-message p').text(tmplMessage.find('.message-text').text());
+            }
+        }
+    );
+}
 
 function messageBoxReset() {
     $('.msg-conversation .message').each(
