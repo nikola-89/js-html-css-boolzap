@@ -73,7 +73,7 @@ span {
 
 .profile .user-extra span svg,
 .contacts-box .finder-box .finder span svg,
-.message-box .msg-info-contact-extra span svg
+.message-box .msg-info-contact-extra span svg,
 .message-box .msg-input-box .msg-input span svg {
     width: 24px;
     height: 24px;
@@ -152,7 +152,6 @@ span {
 
 .contacts-box .contacts-list .contact {
     height: 72px;
-    background-color: rgba(0, 0, 0, 0);
     cursor: pointer;
 }
 
@@ -234,6 +233,7 @@ span {
     width: 21px;
     height: 18px;
     margin-right: 5px;
+    cursor: default;
 }
 
 .message-box .msg-info-contact {
@@ -296,11 +296,20 @@ span {
 }
 
 /* *************************************************** */
-.hidden,
-.template {
+.hidden {
     display: none;
 }
-
+/* *************************************************** */
+.contact-mouseenter {
+    background-color: rgb(245, 245, 245);
+}
+.contact-mouseleave {
+    background-color: rgba(0, 0, 0, 0);
+}
+.contact-click {
+    background-color: rgb(235, 235, 235);
+}
+/* *************************************************** */
 .message {
     min-width: 80px;
     padding: 5px 5px;
