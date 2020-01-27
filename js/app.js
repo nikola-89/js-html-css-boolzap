@@ -71,6 +71,8 @@ $(document).ready(function() {
                             incomingMessage(contactsIdArray);
                         }, 1000);
                 }
+            } else if (event.which == 27) {
+                console.log(contactsIdArray);
             }
         }
     );
