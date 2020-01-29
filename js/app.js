@@ -157,6 +157,8 @@ $(document).ready(function() {
             "top": event.pageY + 'px'
             }
         );
+        console.log('X: ' + event.pageX);
+        console.log('Y: ' + event.pageY);
         $('.dropdown-message-wrapper').removeClass('hidden');
     });
     // ***************************
@@ -176,7 +178,12 @@ $(document).ready(function() {
                     function() {
                         if (this.id == $(thisSelectedMessageToDelete).attr('id')) {
                             this.type = 'deleted';
-                            thisSelectedMessageToDelete.remove();
+                            $(thisSelectedMessageToDelete).fadeTo(100, .3, function() {
+                                $(this).fadeTo(200, 1);
+                            });
+                            setTimeout(function () {
+                                thisSelectedMessageToDelete.remove();
+                            }, 300);
                             thisSelectedMessageToDelete;
                             pairingMessageContactBox(idContactToDelete, contactsIdArray)
                         }
