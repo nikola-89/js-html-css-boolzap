@@ -159,7 +159,7 @@ $(document).ready(function() {
         );
         console.log('X: ' + event.pageX);
         console.log('Y: ' + event.pageY);
-        $('.dropdown-message-wrapper').removeClass('hidden');
+        $('.dropdown-message-wrapper').removeClass('hidden').effect("slide", "fast");
     });
     // ***************************
     $(document).on('click', function() {
@@ -178,9 +178,7 @@ $(document).ready(function() {
                     function() {
                         if (this.id == $(thisSelectedMessageToDelete).attr('id')) {
                             this.type = 'deleted';
-                            $(thisSelectedMessageToDelete).fadeTo(100, .3, function() {
-                                $(this).fadeTo(200, 1);
-                            });
+                            thisSelectedMessageToDelete.effect("pulsate", "fast");
                             setTimeout(function () {
                                 thisSelectedMessageToDelete.remove();
                             }, 300);
@@ -270,7 +268,7 @@ $(document).ready(function() {
     // NASCONDI NOTIFICA |||
     $('.enable-notify-box').click(
         function() {
-            $(this).slideUp(200);
+            $(this).effect("blind", "fast");
         }
     );
     // ***************************
