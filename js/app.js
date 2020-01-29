@@ -180,9 +180,9 @@ $(document).ready(function() {
                             thisSelectedMessageToDelete.effect("pulsate", "fast");
                             setTimeout(function () {
                                 thisSelectedMessageToDelete.remove();
+                                thisSelectedMessageToDelete;
+                                pairingMessageContactBox(idContactToDelete, contactsIdArray)
                             }, 300);
-                            thisSelectedMessageToDelete;
-                            pairingMessageContactBox(idContactToDelete, contactsIdArray)
                         }
                     }
                 );
