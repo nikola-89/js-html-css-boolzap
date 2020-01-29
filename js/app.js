@@ -1,7 +1,7 @@
 $(document).ready(function() {
-    // *********************************
-    // *arr-->obj(1contact)-->.msg-->arr
-    // *********************************
+    // ************************************************
+    // *arr-->obj(contacts)-->arr(msg)-->obj(msg detail)
+    // ************************************************
     var thisSelectedMessageToDelete;
     // ***************************
     // ARRAY CONTATTI ****
