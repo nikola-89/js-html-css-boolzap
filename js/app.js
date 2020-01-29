@@ -157,8 +157,6 @@ $(document).ready(function() {
             "top": event.pageY + 'px'
             }
         );
-        console.log('X: ' + event.pageX);
-        console.log('Y: ' + event.pageY);
         $('.dropdown-message-wrapper').removeClass('hidden').effect("slide", "fast");
     });
     // ***************************
