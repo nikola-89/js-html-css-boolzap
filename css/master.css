@@ -66,6 +66,13 @@ body {
     cursor: pointer;
     object-fit: cover;
 }
+.profile .user-avatar,
+.msg-info-contact .msg-info-contact-avatar {
+    height: 40px;
+    width: 40px;
+}
+.profile .user-extra span,
+.message-box .msg-info-contact-extra span,
 .profile .user-extra span svg,
 .contacts-box .finder-box .finder span svg,
 .message-box .msg-info-contact-extra span svg,
