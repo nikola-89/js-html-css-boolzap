@@ -7,15 +7,16 @@
 
 body {
     overflow: hidden;
+    position: absolute;
 }
 
+/* main-wrapper */
 .main-wrapper {
     height: 100vh;
     width: 100vw;
     background-image: linear-gradient(180deg ,#dddbd1 ,#d2dbdc);
     position: relative;
 }
-
 .main-wrapper::after {
     content: "";
     height: 127px;
@@ -26,6 +27,7 @@ body {
     left: 0;
 }
 
+/* app-wrapper */
 .app-wrapper {
     height: 95vh;
     width: 75vw;
@@ -33,30 +35,28 @@ body {
     z-index: 1;
 }
 
+/* contacts-box */
 .contacts-box {
     flex: 30%;
     overflow: hidden;
 }
 
+/* shared */
 .message-box,
 .stay-connected-phone {
     flex: 70%;
     overflow: hidden;
 }
-
 .profile,
 .finder-box,
-.msg-info-contact,
-.message-box .msg-input {
+.msg-info-contact {
     height: 55px;
 }
-
 .profile,
 .message-box .msg-info-contact {
     background-color: #ededed;
     padding: 6px 16px;
 }
-
 .profile .user-avatar img,
 .msg-info-contact .msg-info-contact-avatar img,
 .contacts-box .contacts-list .contact .contact-avatar img {
@@ -66,45 +66,47 @@ body {
     cursor: pointer;
     object-fit: cover;
 }
-
 .profile .user-extra span svg,
 .contacts-box .finder-box .finder span svg,
 .message-box .msg-info-contact-extra span svg,
-.message-box .msg-input-box .msg-input span svg {
+.message-box .msg-input span svg {
     width: 24px;
     height: 24px;
     cursor: pointer;
 }
-
 .profile .user-extra span:not(:first-child),
 .message-box .msg-info-contact-extra span:not(:first-child) {
     margin-left: 25px;
 }
+.contacts-box .finder-box .finder input,
+.contacts-box .finder-box .finder span {
+    margin-left: 20px;
+}
+.contacts-box .finder-box .finder input::placeholder,
+.message-box .msg-input input::placeholder {
+    color: #bfbfbf;
+}
 
+/* enable-notify-box */
 .contacts-box .enable-notify-box {
     background-color: #9de1fe;
     padding: 13px 12px 14px 13px;
     cursor: pointer;
 }
-
 .contacts-box .enable-notify-box:hover p:last-child {
     text-decoration: underline;
 }
-
 .contacts-box .enable-notify-box span {
     width: 48px;
     height: 48px;
 }
-
 .contacts-box .enable-notify-box .notify-right p {
     padding-left: 10px;
     font-size: 16px;
 }
-
 .contacts-box .enable-notify-box .notify-right p:last-child {
     font-size: 14px;
 }
-
 .contacts-box .enable-notify-box .notify-right p span {
     padding-left: 3px;
     width: 8px;
@@ -112,21 +114,16 @@ body {
     vertical-align: middle;
 }
 
+/* finder-box */
 .contacts-box .finder-box {
     background-color: #f8f8f8;
 }
-
 .contacts-box .finder-box .finder {
     width: 95%;
     height: 80%;
     border-radius: 2rem;
     background-color: #FFF;
 }
-.contacts-box .finder-box .finder input,
-.contacts-box .finder-box .finder span {
-    margin-left: 20px;
-}
-
 .contacts-box .finder-box .finder input {
     width: 70%;
     height: 20px;
@@ -135,11 +132,7 @@ body {
     outline-style: none;
 }
 
-.contacts-box .finder-box .finder input::placeholder,
-.message-box .msg-input-box .msg-input input::placeholder {
-    color: #bfbfbf;
-}
-
+/* contacts-list */
 .contacts-box .contacts-list {
     height: 100%;
     background-color: #FFF;
@@ -155,7 +148,7 @@ body {
     padding: 0 15px;
 }
 
-.contact .contact-avatar img {
+.contacts-box .contacts-list .contact .contact-avatar img {
     width: 50px;
     height: 50px;
 }
@@ -186,7 +179,8 @@ body {
     color: rgba(0, 0, 0, .6);
 }
 
-.contact .contact-info .contact-last-message .chevron {
+.contact .contact-info .contact-last-message .chevron,
+.message .message-top .chevron-msg {
     width: 18px;
     height: 18px;
 }
@@ -237,7 +231,7 @@ body {
 }
 
 .message-box .msg-info-contact {
-    background-color: #EDEDED;
+    border-bottom: 1px solid rgba(0 ,0 ,0 , .08);
 }
 
 .message-box .msg-info-contact .msg-info-contact-name h4 {
@@ -256,33 +250,39 @@ body {
     background-repeat: repeat;
     background-position: center;
     background-size: auto;
-    overflow-y: auto;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 0 9%;
+    width: 100%;
+    height: 100%;
 }
 
-.message-box .msg-conversation::-webkit-scrollbar {
+::-webkit-scrollbar {
     width: 6px;
     height: 6px;
 }
 
-.message-box .msg-conversation::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
     background-color: rgba(0 ,0 ,0 , .2);
 }
 
-.message-box .msg-input-box {
+.message-box .msg-input {
+    width: 100%;
     background-color: #EDEDED;
+    height: 62px;
 }
 
-.message-box .msg-input-box .msg-input span {
+.message-box .msg-input span {
     margin: 0 20px;
 }
 
-.message-box .msg-input-box .msg-input span:first-of-type {
+.message-box .msg-input span:first-of-type {
     margin-right: 0;
 }
 
-.message-box .msg-input-box .msg-input input {
+.message-box .msg-input input {
     width: 100%;
-    height: 35px;
+    height: 42px;
     background-color: #FFF;
     border: none;
     outline-style: none;
@@ -291,10 +291,9 @@ body {
     padding-left: 10px;
 }
 
-.message-box .msg-conversation {
-    padding: 0 9%;
+.message-box .msg-input input[type="text"] {
+    font-size: 15px;
 }
-
 /* *************************************************** */
 .hidden {
     display: none;
@@ -337,9 +336,7 @@ body {
     font-size: 14.2px;
 }
 
-.message .message-top .chevron {
-    width: 18px;
-    height: 18px;
+.message .message-top .chevron-msg {
     cursor: pointer;
     position: absolute;
     top: -3px;
@@ -365,6 +362,37 @@ body {
     background-color: #FFF;
 }
 
+.dropdown-message-wrapper {
+    position: absolute;
+    z-index: 10;
+}
+
+.dropdown-message {
+    display: inline-block;
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 0 2px 5px 0 rgba(0 ,0 ,0 , .26), 0 2px 10px 0 rgba(0 ,0 ,0 , .16);
+    padding: 9px 0;
+    text-align: left;
+}
+
+.dropdown-message ul li {
+    padding: 13px 24px 0 24px;
+    cursor: pointer;
+    color: rgba(0, 0, 0, .5);
+    font-size: 14.5px;
+    font-style: italic;
+    height: 40px;
+}
+
+.dropdown-message ul li:last-of-type {
+    color: #4a4a4a;
+    font-style: normal;
+}
+
+.dropdown-message ul li:hover {
+    background-color: rgb(245, 245, 245);
+}
 /* *************************************************************** */
 @font-face {
     font-family: Segoe UI;
@@ -373,9 +401,16 @@ body {
         url('http://c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.woff2') format("woff2");
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1200px) {
     .main-wrapper .app-wrapper{
-        width: 100vh;
+        width: 100vw;
         height: 100vh;
+    }
+    .contacts-box {
+        flex: 35%;
+    }
+    .message-box,
+    .stay-connected-phone {
+        flex: 65%;
     }
 }
