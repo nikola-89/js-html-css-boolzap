@@ -1,6 +1,6 @@
 $(document).ready(function() {
     // ***************************
-    // ********array*based********
+    // ******array*obj*based******
     // ***************************
     var thisSelectedMessageToDelete;
     // ***************************
