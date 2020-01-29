@@ -1,64 +1,64 @@
 $(document).ready(function() {
-    // ***************************
-    // ******array*obj*based******
-    // ***************************
+    // *********************************
+    // *arr-->obj(1contact)-->.msg-->arr
+    // *********************************
     var thisSelectedMessageToDelete;
     // ***************************
     // ARRAY CONTATTI ****
     var contactsIdArray = [
-        { name : 'Bill Gates',
-        id : 1000,
-        img : 'img/contact-1.jpg',
-        isSelected : false,
-        msg : []
+        { 'name' : 'Bill Gates',
+        'id' : 1000,
+        'img' : 'img/contact-1.jpg',
+        'isSelected' : false,
+        'msg' : []
         },
-        { name : 'Linus Benedict Torvalds',
-        id : 1100,
-        img : 'https://i.imgur.com/hammpug.jpg',
-        isSelected : false,
-        msg : []
+        { 'name' : 'Linus Benedict Torvalds',
+        'id' : 1100,
+        'img' : 'https://i.imgur.com/hammpug.jpg',
+        'isSelected' : false,
+        'msg' : []
         },
-        { name : 'Guido van Rossum',
-        id : 1001,
-        img : 'img/contact-2.jpg',
-        isSelected : false,
-        msg : []
+        { 'name' : 'Guido van Rossum',
+        'id' : 1001,
+        'img' : 'img/contact-2.jpg',
+        'isSelected' : false,
+        'msg' : []
         },
-        { name : 'George Francis Hotz',
-        id : 1002,
-        img : 'img/contact-3.jpg',
-        isSelected : false,
-        msg : []
+        { 'name' : 'George Francis Hotz',
+        'id' : 1002,
+        'img' : 'img/contact-3.jpg',
+        'isSelected' : false,
+        'msg' : []
         },
-        { name : 'BoolBOT',
-        id : 1003,
-        img : 'https://i.imgur.com/FCGEGYo.png',
-        isSelected : false,
-        msg : []
+        { 'name' : 'BoolBOT',
+        'id' : 1003,
+        'img' : 'https://i.imgur.com/FCGEGYo.png',
+        'isSelected' : false,
+        'msg' : []
         },
-        { name : 'BoolBOT',
-        id : 1004,
-        img : 'https://i.imgur.com/FCGEGYo.png',
-        isSelected : false,
-        msg : []
+        { 'name' : 'BoolBOT',
+        'id' : 1004,
+        'img' : 'https://i.imgur.com/FCGEGYo.png',
+        'isSelected' : false,
+        'msg' : []
         },
-        { name : 'BoolBOT',
-        id : 1005,
-        img : 'https://i.imgur.com/FCGEGYo.png',
-        isSelected : false,
-        msg : []
+        { 'name' : 'BoolBOT',
+        'id' : 1005,
+        'img' : 'https://i.imgur.com/FCGEGYo.png',
+        'isSelected' : false,
+        'msg' : []
         },
-        { name : 'BoolBOT',
-        id : 1006,
-        img : 'https://i.imgur.com/FCGEGYo.png',
-        isSelected : false,
-        msg : []
+        { 'name' : 'BoolBOT',
+        'id' : 1006,
+        'img' : 'https://i.imgur.com/FCGEGYo.png',
+        'isSelected' : false,
+        'msg' : []
         },
-        { name : 'BoolBOT',
-        id : 1007,
-        img : 'https://i.imgur.com/FCGEGYo.png',
-        isSelected : false,
-        msg : []
+        { 'name' : 'BoolBOT',
+        'id' : 1050,
+        'img' : 'https://i.imgur.com/FCGEGYo.png',
+        'isSelected' : false,
+        'msg' : []
         },
     ];
     // ***************************
@@ -168,6 +168,7 @@ $(document).ready(function() {
         }
     });
     // ***************************
+    // ELIMINA MESSAGGIO |||
     $(document).on('click', '#delete-msg', function(event) {
         for (let i = 0; i < contactsIdArray.length; i++) {
             if (contactsIdArray[i].isSelected) {
