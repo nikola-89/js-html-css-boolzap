@@ -1,1 +1,1 @@
-js-html-css-boolzap
+js-html-css-boolzap && full{display:flex}
